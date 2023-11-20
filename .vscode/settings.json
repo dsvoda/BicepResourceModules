@@ -50,5 +50,11 @@
   "spellright.language": [
     "en"
   ],
-  "yaml.format.singleQuote": true
+  "yaml.format.singleQuote": true,
+  "terminal.integrated.env.windows": {
+    "PATH": "C:\\Users\\SeanVoda\\.azurelogicapps\\dependencies\\DotNetSDK;${env:PATH}"
+  },
+  "omnisharp.dotNetCliPaths": [
+    "C:\\Users\\SeanVoda\\.azurelogicapps\\dependencies\\DotNetSDK"
+  ]
 }
