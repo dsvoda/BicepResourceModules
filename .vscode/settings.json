@@ -51,10 +51,14 @@
     "en"
   ],
   "yaml.format.singleQuote": true,
-  "terminal.integrated.env.windows": {
-    "PATH": "C:\\Users\\SeanVoda\\.azurelogicapps\\dependencies\\DotNetSDK;${env:PATH}"
-  },
-  "omnisharp.dotNetCliPaths": [
-    "C:\\Users\\SeanVoda\\.azurelogicapps\\dependencies\\DotNetSDK"
-  ]
+  "commandOnAllFiles.commands": {
+    "Format File": {
+      "command": "editor.action.formatDocument",
+      "includeFileExtensions": [
+        ".json",
+        ".bicep",
+        ".ps1"
+      ]
+    }
+  }
 }

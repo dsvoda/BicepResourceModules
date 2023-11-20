@@ -1,3 +1,7 @@
+metadata name = 'Azure Security Center (Defender for Cloud)'
+metadata description = 'This module deploys an Azure Security Center (Defender for Cloud) Configuration.'
+metadata owner = 'Azure/module-maintainers'
+
 targetScope = 'subscription'
 
 @description('Required. The full Azure ID of the workspace to save the data in.')
@@ -187,6 +191,7 @@ resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (ena
   }
 }
 
+@batchSize(1)
 resource pricingTiers 'Microsoft.Security/pricings@2018-06-01' = [for (pricing, index) in pricings: {
   name: pricing.name
   properties: {

@@ -53,7 +53,7 @@ runs:
         # Set test input module path
         $moduleFolderPaths = @(Join-Path $repoRootPath "${{ inputs.modulePath }}")
         $moduleFolderPaths += (Get-ChildItem $moduleFolderPaths -Recurse -Directory -Force).FullName | Where-Object {
-                  (Get-ChildItem $_ -File -Depth 0 -Include @('main.json', 'main.bicep') -Force).Count -gt 0
+          (Get-ChildItem $_ -File -Depth 0 -Include @('main.json', 'main.bicep') -Force).Count -gt 0
         }
         Write-Verbose 'Execute tests in path(s):' -Verbose
         foreach ($moduleFolderPath in $moduleFolderPaths) {
@@ -98,7 +98,7 @@ runs:
         }
 
         Write-Verbose 'Invoke test with' -Verbose
-        Write-Verbose ($pesterConfiguration | ConvertTo-Json | Out-String) -Verbose
+        Write-Verbose ($pesterConfiguration | ConvertTo-Json -Depth 5 | Out-String) -Verbose
 
         $testResults = Invoke-Pester -Configuration $pesterConfiguration
 
